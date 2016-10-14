@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>570</x>
+      <y>210</y>
+      <w>260</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>chat.controller :: ChatbotController
+--
+-stupidBot : Chatbot
+-chatView : ChatbotViewer
+--
++ start : void 
++ get/set</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>110</y>
+      <w>240</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>chat.view :: ChatViewer
+--
+
+--
++ collectResponse(String) : String
++ display Message(String) : void
++ collectUserOption(String) : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>580</x>
+      <y>110</y>
+      <w>230</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>chat.controller :: ChatbotRunner
+--
+
+--
++ main : void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>290</x>
+      <y>110</y>
+      <w>230</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>chat.model :: Chatbot
+--
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>550</x>
+      <y>90</y>
+      <w>310</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>Note..
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>280</x>
+      <y>90</y>
+      <w>250</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>Note..
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>0</x>
+      <y>90</y>
+      <w>270</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>Note..
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
