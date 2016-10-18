@@ -4,7 +4,7 @@ import chat.model.Chatbot;
 
 public class ChatbotController
 {
-	private ChatbotController stupidBot;
+	private Chatbot stupidBot;
 
 		
 	
