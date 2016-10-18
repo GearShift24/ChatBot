@@ -2,7 +2,7 @@ package chat.view;
 
 import javax.swing.JOptionPane;
 
-public class ChatViewer
+public class ChatbotViwer
 {
 
 	public String collectResponse(String question)
