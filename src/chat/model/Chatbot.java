@@ -130,15 +130,14 @@ public class Chatbot
 	{
 		boolean hasPolitical = false;
 	
-	String userInput = "";
-	while(userInput = .containspoliticalTopicList)
-	{
-		hasPolitical = true;
-	}
-		
+	
+			for(String politicalTopicChecker : politicalTopicsList)
+			{
+				
+			}
+	
+			
 		return hasPolitical;
-		
-		
 	}
 
 	/**
