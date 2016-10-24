@@ -128,7 +128,17 @@ public class Chatbot
 	 */
 	public boolean politicalTopicChecker(String currentInput)
 	{
-		return false;
+		boolean hasPolitical = false;
+	
+	String userInput = "";
+	while(userInput = .containspoliticalTopicList)
+	{
+		hasPolitical = true;
+	}
+		
+		return hasPolitical;
+		
+		
 	}
 
 	/**
