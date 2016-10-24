@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Chatbot
 {
 	private ArrayList<String> memesList;
-	private ArrayList<String> politicalTopicList;
+	private ArrayList<String> politicalTopicsList;
 	private String userName;
 	private String content;
 
@@ -21,15 +21,19 @@ public class Chatbot
 	public Chatbot(String userName)
 	{
 		memesList = new ArrayList<String>();
-		politicalTopicList = new ArrayList<String>();
+		buildMemesList();
+		politicalTopicsList = new ArrayList<String>();
+		buildPoliticalTopicsList();
+		
 		content = new String("Anything");
+		this.content ="Computer Games";
+		
+		this.userName = userName;
+		
 	}
 
 	private void buildMemesList()
 	{
-	
-		memesList = new ArrayList <String>();
-		
 		memesList.add("doge");
 		memesList.add("cute animals");
 		memesList.add("grumpy cat");
@@ -44,16 +48,34 @@ public class Chatbot
 		memesList.add("trump");
 		memesList.add("shrek");
 		memesList.add("pewdiepie");
-		memesList.add("yoda");
+		memesList.add("lank");
 		memesList.add("mario");
 		memesList.add("link");
 		memesList.add("excuse me princess");
-		
-
+		memesList.add("mah boy");
 	}
 
 	private void buildPoliticalTopicsList()
 	{
+		politicalTopicsList.add("Democrat");
+		politicalTopicsList.add("Republican");
+		politicalTopicsList.add("11/8/16");
+		politicalTopicsList.add("conservative");
+		politicalTopicsList.add("Clinton");
+		politicalTopicsList.add("Trump");
+		politicalTopicsList.add("Kaine");
+		politicalTopicsList.add("Pence");
+		politicalTopicsList.add("Stein");
+		politicalTopicsList.add("Johnson");
+		politicalTopicsList.add("election");
+		politicalTopicsList.add("liberal");
+		politicalTopicsList.add("conservative");
+		politicalTopicsList.add("debate");
+		politicalTopicsList.add("");
+		politicalTopicsList.add("");
+		politicalTopicsList.add("");
+		politicalTopicsList.add("");
+		politicalTopicsList.add("");
 
 	}
 
@@ -84,7 +106,12 @@ public class Chatbot
 	 */
 	public boolean contentChecker(String currentInput)
 	{
-		return false;
+		boolean hasContent = false;
+		
+		
+		
+		
+		return hasContent;
 	}
 
 	/**
@@ -111,7 +138,11 @@ public class Chatbot
 	 */
 	public boolean memeChecker(String currentInput)
 	{
+		
+		
+		
 		return false;
+		
 	}
 
 	/**
