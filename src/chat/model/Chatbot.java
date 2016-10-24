@@ -23,15 +23,38 @@ public class Chatbot
 		memesList = new ArrayList<String>();
 		politicalTopicList = new ArrayList<String>();
 		content = new String("Anything");
-		userName = new String("       ");
 	}
 
 	private void buildMemesList()
 	{
+	
+		memesList = new ArrayList <String>();
+		
+		memesList.add("doge");
+		memesList.add("cute animals");
+		memesList.add("grumpy cat");
+		memesList.add("dat boi");
+		memesList.add("willy wonka");
+		memesList.add("harambe");
+		memesList.add("john cena");
+		memesList.add("joey salads");
+		memesList.add("chuck norris");
+		memesList.add("elf");
+		memesList.add("dwight");
+		memesList.add("trump");
+		memesList.add("shrek");
+		memesList.add("pewdiepie");
+		memesList.add("yoda");
+		memesList.add("mario");
+		memesList.add("link");
+		memesList.add("excuse me princess");
+		
+
 	}
 
 	private void buildPoliticalTopicsList()
 	{
+
 	}
 
 	/**
@@ -97,7 +120,7 @@ public class Chatbot
 	 */
 	public String getUserName()
 	{
-		return userName;
+		return null;
 	}
 
 	/**
