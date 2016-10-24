@@ -71,11 +71,11 @@ public class Chatbot
 		politicalTopicsList.add("liberal");
 		politicalTopicsList.add("conservative");
 		politicalTopicsList.add("debate");
-		politicalTopicsList.add("");
-		politicalTopicsList.add("");
-		politicalTopicsList.add("");
-		politicalTopicsList.add("");
-		politicalTopicsList.add("");
+		politicalTopicsList.add("superpreditor");
+		politicalTopicsList.add("bernie");
+		politicalTopicsList.add("hacking");
+		politicalTopicsList.add("ballot");
+		politicalTopicsList.add("russia");
 
 	}
 
@@ -108,7 +108,10 @@ public class Chatbot
 	{
 		boolean hasContent = false;
 		
-		
+		if(currentInput.contains(content))
+		{
+			hasContent = true;
+		}
 		
 		
 		return hasContent;
