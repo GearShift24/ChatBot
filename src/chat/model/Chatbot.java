@@ -129,12 +129,17 @@ public class Chatbot
 	public boolean politicalTopicChecker(String currentInput)
 	{
 		boolean hasPolitical = false;
-	
+		
 	
 			for(String politicalTopicChecker : politicalTopicsList)
 			{
-				
+				String cancer = politicalTopicsList.get(0);
+				if(currentInput.equalsIgnoreCase("Democrat"))
+				{
+				hasPolitical = true;
 			}
+				
+				
 	
 			
 		return hasPolitical;
