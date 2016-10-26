@@ -41,11 +41,15 @@ public class ChatController
 		{
 			checkedInput += "\nYou know my secret topic!\n";
 		}
-		
+		if(stupidBot.politicalTopicChecker(input))
+		{
+			checkedInput += "\n you enjoy politics";
+		}
 		if(checkedInput.length() == 0)
 		{
 			checkedInput = "I have no idea what you mean about " + input;
 		}
+		
 		
 		return checkedInput;
 	}

@@ -45,7 +45,7 @@ public class Chatbot
 		memesList.add("chuck norris");
 		memesList.add("elf");
 		memesList.add("dwight");
-		memesList.add("trump");
+		memesList.add("the cake is a lie");
 		memesList.add("shrek");
 		memesList.add("pewdiepie");
 		memesList.add("lank");
@@ -131,7 +131,9 @@ public class Chatbot
 	{
 		boolean hasPolitical = false;
 		
-		if(politicalTopicList.contains(currentInput))
+		for ( int index =0; index <politicalTopicList.size(); index++)
+		
+		if(currentInput.equals(politicalTopicList.get(index)))
 		{
 			hasPolitical = true;
 		}
@@ -151,7 +153,9 @@ public class Chatbot
 	{
 		boolean isMeme = false;
 		
-		if(memesList.equalsIgnoreCase(currentInput))
+		for ( int index =0; index <memesList.size(); index++)
+		
+		if(currentInput.equalsIgnoreCase(memesList.get(index)))
 		{
 			isMeme = true;
 		}
