@@ -49,7 +49,10 @@ public class ChatController
 		{
 			checkedInput = "I have no idea what you mean about " + input;
 		}
-		
+		if(stupidBot.quitChecker(input))
+		{
+			System.exit(0);
+		}
 		
 		return checkedInput;
 	}

@@ -14,6 +14,7 @@ public class Chatbot
 	private ArrayList<String> keyboardMashList;
 	private String userName;
 	private String content;
+	private String quit;
 
 	/**
 	 * * Creates an instance of the Chatbot with the supplied username. * @param
@@ -33,7 +34,7 @@ public class Chatbot
 		this.content ="games";
 		
 		this.userName = userName;
-		
+		this.quit = "quit";
 	}
 
 	private void buildMemesList()
@@ -192,7 +193,18 @@ public class Chatbot
 				return isMash;
 		}
 	
-	
+	public boolean quitChecker(String currentInput)
+	{
+		boolean hasQuit = false;
+		if(currentInput.equals(quit))
+		{
+			hasQuit = true;
+			
+		}
+		
+		return hasQuit;
+		
+	}
 	
 	public String getUserName()
 	{
