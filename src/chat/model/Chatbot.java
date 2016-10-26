@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Chatbot
 {
 	private ArrayList<String> memesList;
-	private ArrayList<String> politicalTopicsList;
+	private ArrayList<String> politicalTopicList;
 	private String userName;
 	private String content;
 
@@ -22,11 +22,11 @@ public class Chatbot
 	{
 		memesList = new ArrayList<String>();
 		buildMemesList();
-		politicalTopicsList = new ArrayList<String>();
+		politicalTopicList = new ArrayList<String>();
 		buildPoliticalTopicsList();
 		
 		content = new String("Anything");
-		this.content ="Computer Games";
+		this.content ="games";
 		
 		this.userName = userName;
 		
@@ -57,25 +57,25 @@ public class Chatbot
 
 	private void buildPoliticalTopicsList()
 	{
-		politicalTopicsList.add("Democrat");
-		politicalTopicsList.add("Republican");
-		politicalTopicsList.add("11/8/16");
-		politicalTopicsList.add("conservative");
-		politicalTopicsList.add("Clinton");
-		politicalTopicsList.add("Trump");
-		politicalTopicsList.add("Kaine");
-		politicalTopicsList.add("Pence");
-		politicalTopicsList.add("Stein");
-		politicalTopicsList.add("Johnson");
-		politicalTopicsList.add("election");
-		politicalTopicsList.add("liberal");
-		politicalTopicsList.add("conservative");
-		politicalTopicsList.add("debate");
-		politicalTopicsList.add("superpreditor");
-		politicalTopicsList.add("bernie");
-		politicalTopicsList.add("hacking");
-		politicalTopicsList.add("ballot");
-		politicalTopicsList.add("russia");
+		politicalTopicList.add("Democrat");
+		politicalTopicList.add("Republican");
+		politicalTopicList.add("11/8/16");
+		politicalTopicList.add("conservative");
+		politicalTopicList.add("Clinton");
+		politicalTopicList.add("Trump");
+		politicalTopicList.add("Kaine");
+		politicalTopicList.add("Pence");
+		politicalTopicList.add("Stein");
+		politicalTopicList.add("Johnson");
+		politicalTopicList.add("election");
+		politicalTopicList.add("liberal");
+		politicalTopicList.add("conservative");
+		politicalTopicList.add("debate");
+		politicalTopicList.add("superpreditor");
+		politicalTopicList.add("bernie");
+		politicalTopicList.add("hacking");
+		politicalTopicList.add("ballot");
+		politicalTopicList.add("russia");
 
 	}
 
@@ -131,17 +131,25 @@ public class Chatbot
 		boolean hasPolitical = false;
 		
 	
-			for(String politicalTopicChecker : politicalTopicsList)
+			for(String politicalTopicChecker : politicalTopicList)
 			{
-				String cancer = politicalTopicsList.get(0);
+				String dWord = politicalTopicList.get(0);
 				if(currentInput.equalsIgnoreCase("Democrat"))
-				{
-				hasPolitical = true;
-			}
+					{
+					hasPolitical = true;
+					}
+				String rWord = politicalTopicList.get(1);
+				if(currentInput.equalsIgnoreCase("Republican"))
+					{
+					hasPolitical = true;
+					}
+				String numberWord = politicalTopicList.get(2);
+				if(currentInput.equalsIgnoreCase("11/8/16"))
+					{
+					hasPolitical = true;
+					}
 				
-				
-	
-			
+				}
 		return hasPolitical;
 	}
 
