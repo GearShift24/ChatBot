@@ -11,6 +11,7 @@ public class Chatbot
 {
 	private ArrayList<String> memesList;
 	private ArrayList<String> politicalTopicList;
+	private ArrayList<String> keyboardMashList;
 	private String userName;
 	private String content;
 
@@ -24,6 +25,9 @@ public class Chatbot
 		buildMemesList();
 		politicalTopicList = new ArrayList<String>();
 		buildPoliticalTopicsList();
+		keyboardMashList = new ArrayList<String>();
+		buildKeyboardMashList();
+		
 		
 		content = new String("Anything");
 		this.content ="games";
@@ -80,6 +84,13 @@ public class Chatbot
 
 	}
 
+	private void buildKeyboardMashList()
+	{
+		keyboardMashList.add("sdf");
+		keyboardMashList.add("dfg");
+		keyboardMashList.add("cvb");
+		keyboardMashList.add(",./");
+	}
 	/**
 	 * * Checks the length of the supplied string. Returns false if the supplied
 	 * String is empty or null, otherwise returns true. * @param currentInput * @return
@@ -169,6 +180,20 @@ public class Chatbot
 	 * * Returns the username of this Chatbot instance. * @return The username
 	 * of the Chatbot.
 	 */
+	
+	public boolean keyboardMashChecker(String currentInput)
+		{	boolean isMash = false;
+				for( int index =0; index <keyboardMashList.size(); index++)
+				
+					if(currentInput.contains(keyboardMashList.get(index)))
+					{
+						isMash = true;
+					}
+				return isMash;
+		}
+	
+	
+	
 	public String getUserName()
 	{
 		return null;
@@ -192,6 +217,10 @@ public class Chatbot
 		return memesList;
 	}
 
+	public ArrayList<String> getKeyboardMashList()
+	{
+		return keyboardMashList;
+	}
 	/**
 	 * * Getter method for the politicalTopicList object. * @return The
 	 * reference to the political topic list.
@@ -209,5 +238,5 @@ public class Chatbot
 	{
 		this.content = content;
 	}
-
+	
 }
