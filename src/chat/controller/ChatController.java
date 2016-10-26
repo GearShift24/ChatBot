@@ -22,7 +22,8 @@ public class ChatController
 			while(stupidBot.lengthChecker(response))
 			{
 				display.displayMessage(useChatbotCheckers(response));
-				display.collectResponse("wow, you want to talk about " + response + "?  Tell me more!");
+				response = display.collectResponse("wow, you want to talk about " + response + "?  Tell me more!");
+			
 				
 			}
 			
@@ -45,13 +46,14 @@ public class ChatController
 		{
 			checkedInput += "\n you enjoy politics";
 		}
-		if(checkedInput.length() == 0)
-		{
-			checkedInput = "I have no idea what you mean about " + input;
-		}
+		
 		if(stupidBot.quitChecker(input))
 		{
 			System.exit(0);
+		}
+		if(checkedInput.length() == 0)
+		{
+			checkedInput = "I have no idea what you mean about " + input;
 		}
 		
 		return checkedInput;
