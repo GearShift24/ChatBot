@@ -6,22 +6,13 @@ import javax.swing.ImageIcon;
 public class ChatbotViewer
 {
 
-	private String windowMessage;
-	private ImageIcon chatIcon;
 	
-	public ChatbotViewer()
-	{
-		windowMessage = "This message is brought to you by chatbot";
-		chatIcon = new ImageIcon(getClass().getResource("images/chatbot.jpg"));
-		
-		
-	}
 	
 	public String collectResponse(String question)
 	{
 		String response = "";
 		
-		response = JOptionPane.showInputDialog(null, question, windowMessage, JOptionPane.INFORMATION_MESSAGE, chatIcon,null,"Type here Please").toString();
+		response = JOptionPane.showInputDialog(null, question);
 		
 		return response;
 	}
