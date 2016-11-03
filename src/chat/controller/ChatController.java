@@ -46,7 +46,10 @@ public class ChatController
 		{
 			checkedInput += "\n you enjoy politics";
 		}
-		
+		if(stupidBot.keyboardMashChecker(input))
+		{
+			checkedInput += "\n STOP MASHING YOU IDIOT, IDIOT!";
+		}
 		if(stupidBot.quitChecker(input))
 		{
 			System.exit(0);

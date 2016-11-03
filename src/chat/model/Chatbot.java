@@ -114,7 +114,8 @@ public class Chatbot
 	 * instance.
 	 * 
 	 * @param currentInput
-	 *            The supplied String to be checked. * @return Whether it
+	 *            The supplied String to be 
+. * @return Whether it
 	 *            matches the content area.
 	 */
 	public boolean contentChecker(String currentInput)
