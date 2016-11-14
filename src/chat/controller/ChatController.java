@@ -1,17 +1,20 @@
 package chat.controller;
 
 import chat.model.Chatbot;
+import chat.view.ChatFrame;
 import chat.view.ChatbotViewer;
 
 public class ChatController
 {
 	private Chatbot stupidBot;
 	private ChatbotViewer display;
-		
+	private ChatFrame chatFrame;	
+	
 	public ChatController()
 	{
 		stupidBot = new Chatbot("wall-e");
 		display = new ChatbotViewer();
+		chatFrame = new ChatFrame(this);
 	}
 	
 	
@@ -28,8 +31,23 @@ public class ChatController
 			}
 			
 			//if you put in an input it keeps going, if you have no response or null it goes here and closes the application
+			
+			getBaseFrame();
+			getChatbot();
 		}
 	
+		public Chatbot getChatbot()
+		{
+			return stupidBot;
+		}
+		
+		public ChatFrame getBaseFrame()
+		{
+			return chatFrame;
+		}
+		
+		
+		
 	private String useChatbotCheckers(String input)
 	{
 		String checkedInput = "";

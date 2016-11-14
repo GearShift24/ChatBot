@@ -12,6 +12,7 @@ public class Chatbot
 	private ArrayList<String> memesList;
 	private ArrayList<String> politicalTopicList;
 	private ArrayList<String> keyboardMashList;
+	private ArrayList<String> twitterList;
 	private String userName;
 	private String content;
 	private String quit;
@@ -28,7 +29,8 @@ public class Chatbot
 		buildPoliticalTopicsList();
 		keyboardMashList = new ArrayList<String>();
 		buildKeyboardMashList();
-		
+		twitterList = new ArrayList<String>();
+		buildTwitterList();
 		
 		content = new String("Anything");
 		this.content ="games";
@@ -92,6 +94,14 @@ public class Chatbot
 		keyboardMashList.add("cvb");
 		keyboardMashList.add(",./");
 	}
+	
+	private void buildTwitterList()
+	{
+		twitterList.add("#dw35 f");
+		twitterList.add("@d4d sretsf ");
+
+	}
+	
 	/**
 	 * * Checks the length of the supplied string. Returns false if the supplied
 	 * String is empty or null, otherwise returns true. * @param currentInput * @return
@@ -207,6 +217,22 @@ public class Chatbot
 		
 	}
 	
+	
+	public boolean twitterChecker(String currentInput)
+	{
+		boolean hasTwitterResponse = false;
+		for( int index =0; index <twitterList.size(); index++)
+		
+		if(currentInput.contains(twitterList.get(index)))
+		{
+			hasTwitterResponse = true;
+		}
+		
+		return hasTwitterResponse;
+	}
+//	
+	
+	
 	public String getUserName()
 	{
 		return userName;
@@ -251,5 +277,6 @@ public class Chatbot
 	{
 		this.content = content;
 	}
+
 	
 }
