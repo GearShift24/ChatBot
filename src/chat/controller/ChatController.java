@@ -46,10 +46,18 @@ public class ChatController
 			return chatFrame;
 		}
 		
-		
-		
-	private String useChatbotCheckers(String input)
+//		public String communicateWithChatbot(String userText)
+//		{
+//			String botText = "";
+//			
+//			
+//			
+//			return botText;
+//		}
+//		
+	public String useChatbotCheckers(String input)
 	{
+		
 		String checkedInput = "";
 		
 		if(stupidBot.memeChecker(input))
@@ -64,6 +72,10 @@ public class ChatController
 		{
 			checkedInput += "\n you enjoy politics";
 		}
+		if(stupidBot.twitterChecker(input))
+		{
+			checkedInput += "\n you are using twitter methinks";
+		}
 		
 		if(stupidBot.quitChecker(input))
 		{
@@ -73,8 +85,9 @@ public class ChatController
 		{
 			checkedInput = "I have no idea what you mean about " + input;
 		}
-		
+	
 		return checkedInput;
+
 	}
 }
 

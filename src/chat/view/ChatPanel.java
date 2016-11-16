@@ -62,6 +62,17 @@ public class ChatPanel extends JPanel
 	
 	private void setupListeners()
 	{
-		
+		chatButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				String personWords = chatField.getText();
+				String chatbotResponse = baseController.useChatbotCheckers(personWords);
+				
+				chatDisplay.setText("You said: " + personWords + "\n" + "Chatbot Says: " + chatbotResponse);
+				
+				
+			}
+		});
 	}
 }
