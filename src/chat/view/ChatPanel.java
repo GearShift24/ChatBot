@@ -4,6 +4,9 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.awt.Font;
 
 import chat.controller.ChatController;
 
@@ -14,6 +17,7 @@ public class ChatPanel extends JPanel
 	private JTextArea chatDisplay;
 	private JTextField chatField;
 	private JButton chatButton;
+	private JCheckBox chatCheckBox;
 	
 	public ChatPanel(ChatController baseController)
 	{
@@ -24,6 +28,7 @@ public class ChatPanel extends JPanel
 		chatDisplay = new JTextArea(5,25);
 		chatField = new JTextField(25);
 		chatButton = new JButton("Chat with the bot nerrrrd!");
+		chatCheckBox = new JCheckBox("Serif Font", false);
 
 		setupChatDisplay();
 		setupPanel();
@@ -49,6 +54,7 @@ public class ChatPanel extends JPanel
 		this.add(chatButton);
 		this.add(chatDisplay);
 		this.add(chatField);
+		this.add(chatCheckBox);
 	}
 	
 	private void setupLayout()
@@ -58,6 +64,8 @@ public class ChatPanel extends JPanel
 	baseLayout.putConstraint(SpringLayout.SOUTH, chatField, -29, SpringLayout.NORTH, chatButton);
 	baseLayout.putConstraint(SpringLayout.EAST, chatField, 0, SpringLayout.EAST, chatButton);
 	baseLayout.putConstraint(SpringLayout.NORTH, chatDisplay, 34, SpringLayout.NORTH, this);
+	baseLayout.putConstraint(SpringLayout.NORTH, chatCheckBox, 0, SpringLayout.NORTH, chatField);
+	baseLayout.putConstraint(SpringLayout.EAST, chatCheckBox, -8, SpringLayout.WEST, chatField);
 	}
 	
 	private void setupListeners()
@@ -74,5 +82,27 @@ public class ChatPanel extends JPanel
 				
 			}
 		});
+	
+	
+	
+		
+		
+		
+	chatCheckBox.addItemListener(new ItemListener()
+	{
+	
+		public void itemStateChanged(ItemEvent e)
+		{
+			
+			
+			
+			chatField.setFont(chatCheckBox.isSelected(new Font("Serif",Font.BOLD,14)));
+//			chatField.setFont(new Font("Serif",Font.BOLD,14 check.isSelected());
+//			chatDisplay.setFont(new Font("Serif",Font.BOLD,14 + check.isSelected());
+		}
+	});
+	
+	
 	}
+	
 }
