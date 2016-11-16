@@ -88,22 +88,18 @@ public class ChatPanel extends JPanel
 		
 		
 //		
-//	chatCheckBox.addItemListener(new ItemListener()
-//	{
+	chatCheckBox.addItemListener(new ItemListener()
+	{
 //	
-//		public void itemStateChanged(ItemEvent e)
-//		{
-//			
+		public void itemStateChanged(ItemEvent e)
+		{
+			chatField.setFont(new Font("Serif",Font.BOLD,14));
+			chatDisplay.setFont(new Font("Serif",Font.BOLD,14));
+		}
 //			System.out.println("Checked? " + chatCheckBox.isSelected());
 //			
 //			chatField.setFont(e.getStateChange() == ItemEvent.SELECTED ? (new Font("Serif",Font.BOLD,14));
-//			
-//			
-//			
-//			chatField.setFont(new Font("Serif",Font.BOLD,14 check.isSelected());
-//			chatDisplay.setFont(new Font("Serif",Font.BOLD,14 + check.isSelected());
-//		}
-//	});
+	});
 //	
 	
 	}
