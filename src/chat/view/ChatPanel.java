@@ -28,7 +28,7 @@ public class ChatPanel extends JPanel
 		chatDisplay = new JTextArea(5,25);
 		chatField = new JTextField(25);
 		chatButton = new JButton("Chat with the bot nerrrrd!");
-		chatCheckBox = new JCheckBox("Serif Font", false);
+		chatCheckBox = new JCheckBox("CHANGE TO CODE FORM", false);
 
 		setupChatDisplay();
 		setupPanel();
@@ -93,12 +93,14 @@ public class ChatPanel extends JPanel
 //	
 		public void itemStateChanged(ItemEvent e)
 		{
-			chatField.setFont(new Font("Serif",Font.BOLD,14));
-			chatDisplay.setFont(new Font("Serif",Font.BOLD,14));
-		}
+//			chatField.setFont(new Font("Serif",Font.BOLD,14));
+//			chatDisplay.setFont(new Font("Serif",Font.BOLD,14));
+//		
 //			System.out.println("Checked? " + chatCheckBox.isSelected());
-//			
-//			chatField.setFont(e.getStateChange() == ItemEvent.SELECTED ? (new Font("Serif",Font.BOLD,14));
+			
+			chatField.setFont(e.getStateChange() == ItemEvent.SELECTED ? (new Font("Serif",Font.BOLD,14)) : new Font("Wingdings",Font.BOLD,14));
+			chatDisplay.setFont(e.getStateChange() == ItemEvent.SELECTED ? (new Font("Serif",Font.BOLD,14)) : new Font("Wingdings",Font.BOLD,14));
+	}
 	});
 //	
 	
