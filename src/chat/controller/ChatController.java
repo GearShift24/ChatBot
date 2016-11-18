@@ -34,8 +34,58 @@ public class ChatController
 			
 			getBaseFrame();
 			getChatbot();
+			randomTopicGenerator();
 		}
 	
+		private String randomTopicGenerator()
+		{
+			String randomTopic = "";
+			int random = (int) (Math.random() * 7);
+			
+			switch(random)
+			{
+			case 0:
+				randomTopic = ". Have you seen hugh mungas :o?";
+				break;
+				
+			case 1:
+				randomTopic =". think about shrek";
+				
+			case 2:
+				randomTopic =". hink about politics qwith captional latters";
+				break;
+				
+			case 3:
+				randomTopic =". Think about wordssss";
+				break;
+				
+			case 4:
+				randomTopic =". Candy cheese";
+				break;
+				
+			case 5:
+				randomTopic =". Words wrods wrods";
+				break;
+				
+			case 6:
+				randomTopic =". Hehe ecks deeeeeeee";
+				break;
+				
+			case 7:
+				randomTopic =". What uuuuu what m8";
+				break;
+				
+			default:
+				randomTopic = ". This cant be happening!";
+				break;
+				
+				
+	
+			}
+			
+			return randomTopic;
+		}
+		
 		public Chatbot getChatbot()
 		{
 			return stupidBot;
@@ -81,9 +131,15 @@ public class ChatController
 		{
 			System.exit(0);
 		}
-		if(checkedInput.length() == 0)
+		if(!stupidBot.lengthChecker(checkedInput))
 		{
 			checkedInput = "I have no idea what you mean about " + input;
+		}
+		
+		int canBeRandom = (int) (Math.random() * 7);
+		if(canBeRandom % 7 == 0)
+		{
+			checkedInput += randomTopicGenerator();
 		}
 	
 		return checkedInput;

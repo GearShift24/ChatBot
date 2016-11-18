@@ -54,7 +54,7 @@ public class Chatbot
 		memesList.add("dwight");
 		memesList.add("the cake is a lie");
 		memesList.add("shrek");
-		memesList.add("pewdiepie");
+		memesList.add("hugh mungas");
 		memesList.add("lank");
 		memesList.add("mario");
 		memesList.add("link");
