@@ -52,6 +52,10 @@ public class ChatController
 		{
 			checkedInput += "\n you are using twitter methinks";
 		}
+		if(stupidBot.inputHTMLChecker(input))
+		{
+			checkedInput += "\n YOU ARE USING A WEBSITE URL AINT YOU, U WOT M8?";
+		}
 		
 		if(!stupidBot.lengthChecker(checkedInput))
 		{
@@ -99,31 +103,31 @@ public class ChatController
 			randomTopic =". think about shrek";
 			
 		case 2:
-			randomTopic =". hink about politics qwith captional latters";
+			randomTopic =". Think about politics qwith captional latters";
 			break;
 			
 		case 3:
-			randomTopic =". Think about wordssss";
+			randomTopic =". Think about a certian nintendo character";
 			break;
 			
 		case 4:
-			randomTopic =". Candy cheese";
+			randomTopic =". Think of a chocolate Factory";
 			break;
 			
 		case 5:
-			randomTopic =". Words wrods wrods";
+			randomTopic =". Think of the ussr";
 			break;
 			
 		case 6:
-			randomTopic =". Hehe ecks deeeeeeee";
+			randomTopic =". TRY MASHING!";
 			break;
 			
 		case 7:
-			randomTopic =". What uuuuu what m8";
+			randomTopic =". Think about a green frog.";
 			break;
 			
 		default:
-			randomTopic = ". This cant be happening!";
+			randomTopic = ". Think king harkanian!";
 			break;
 			
 			

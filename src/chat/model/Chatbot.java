@@ -31,6 +31,7 @@ public class Chatbot
 		buildKeyboardMashList();
 		twitterList = new ArrayList<String>();
 		buildTwitterList();
+
 		
 		content = new String("Anything");
 		this.content ="games";
@@ -101,6 +102,7 @@ public class Chatbot
 		twitterList.add("@d4d sretsf ");
 
 	}
+
 	
 	/**
 	 * * Checks the length of the supplied string. Returns false if the supplied
@@ -216,6 +218,49 @@ public class Chatbot
 		return hasQuit;
 		
 	}
+	
+	public boolean inputHTMLChecker(String currentInput)
+	{
+		boolean isHTML = false;
+		
+		if(currentInput.contains("<B>"))   
+				{
+			isHTML = true;
+				}
+			
+		if(currentInput.contains("</B>"))   
+			{
+			isHTML = true;
+			}
+		
+		if(currentInput.contains("<I>"))   
+			{
+			isHTML = true;
+			}
+		
+		if(currentInput.contains("</i>"))   
+			{
+			isHTML = true;
+			}
+		
+		if(currentInput.contains("<A HREF=\"sdfs.html\">"))   
+			{
+			isHTML = true;
+			}
+		if(currentInput.contains("</a>"))   
+			{
+			isHTML = true;
+			}
+			
+			
+//			
+//				.indexOf1 < .indexOf2
+			
+			
+		
+		return isHTML;
+	}
+	
 	
 	
 	public boolean twitterChecker(String currentInput)
