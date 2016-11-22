@@ -15,100 +15,26 @@ public class ChatController
 		stupidBot = new Chatbot("wall-e");
 		display = new ChatbotViewer();
 		chatFrame = new ChatFrame(this);
+		
+		getBaseFrame();
+		getChatbot();
+		randomTopicGenerator();
 	}
 	
 	
 		public void start()
 		{
-			String response = display.collectResponse("What do you wanna talk about baby? 8)");
-			
-			while(stupidBot.lengthChecker(response))
-			{
-				display.displayMessage(useChatbotCheckers(response));
-				response = display.collectResponse("wow, you want to talk about " + response + "?  Tell me more!");
-			
-				
-			}
-			
-			//if you put in an input it keeps going, if you have no response or null it goes here and closes the application
-			
-			getBaseFrame();
-			getChatbot();
-			randomTopicGenerator();
+		
+
 		}
 	
-		private String randomTopicGenerator()
-		{
-			String randomTopic = "";
-			int random = (int) (Math.random() * 7);
-			
-			switch(random)
-			{
-			case 0:
-				randomTopic = ". Have you seen hugh mungas :o?";
-				break;
-				
-			case 1:
-				randomTopic =". think about shrek";
-				
-			case 2:
-				randomTopic =". hink about politics qwith captional latters";
-				break;
-				
-			case 3:
-				randomTopic =". Think about wordssss";
-				break;
-				
-			case 4:
-				randomTopic =". Candy cheese";
-				break;
-				
-			case 5:
-				randomTopic =". Words wrods wrods";
-				break;
-				
-			case 6:
-				randomTopic =". Hehe ecks deeeeeeee";
-				break;
-				
-			case 7:
-				randomTopic =". What uuuuu what m8";
-				break;
-				
-			default:
-				randomTopic = ". This cant be happening!";
-				break;
-				
-				
 	
-			}
-			
-			return randomTopic;
-		}
-		
-		public Chatbot getChatbot()
-		{
-			return stupidBot;
-		}
-		
-		public ChatFrame getBaseFrame()
-		{
-			return chatFrame;
-		}
-		
-//		public String communicateWithChatbot(String userText)
-//		{
-//			String botText = "";
-//			
-//			
-//			
-//			return botText;
-//		}
-//		
 	public String useChatbotCheckers(String input)
 	{
+	String checkedInput = "";
+	if(!stupidBot.quitChecker(input))
+	{
 		
-		String checkedInput = "";
 		
 		if(stupidBot.memeChecker(input))
 		{
@@ -127,10 +53,6 @@ public class ChatController
 			checkedInput += "\n you are using twitter methinks";
 		}
 		
-		if(stupidBot.quitChecker(input))
-		{
-			System.exit(0);
-		}
 		if(!stupidBot.lengthChecker(checkedInput))
 		{
 			checkedInput = "I have no idea what you mean about " + input;
@@ -141,9 +63,74 @@ public class ChatController
 		{
 			checkedInput += randomTopicGenerator();
 		}
+	}
+	
+	else{
+		display.displayMessage("Thanks for chatting! See you soon bb");
+		System.exit(0);
+		}
 	
 		return checkedInput;
+	}
+	
+	
+	public Chatbot getChatbot()
+	{
+		return stupidBot;
+	}
+	
+	public ChatFrame getBaseFrame()
+	{
+		return chatFrame;
+	}
 
+	private String randomTopicGenerator()
+	{
+		String randomTopic = "";
+		int random = (int) (Math.random() * 7);
+		
+		switch(random)
+		{
+		case 0:
+			randomTopic = ". Have you seen hugh mungas :o?";
+			break;
+			
+		case 1:
+			randomTopic =". think about shrek";
+			
+		case 2:
+			randomTopic =". hink about politics qwith captional latters";
+			break;
+			
+		case 3:
+			randomTopic =". Think about wordssss";
+			break;
+			
+		case 4:
+			randomTopic =". Candy cheese";
+			break;
+			
+		case 5:
+			randomTopic =". Words wrods wrods";
+			break;
+			
+		case 6:
+			randomTopic =". Hehe ecks deeeeeeee";
+			break;
+			
+		case 7:
+			randomTopic =". What uuuuu what m8";
+			break;
+			
+		default:
+			randomTopic = ". This cant be happening!";
+			break;
+			
+			
+
+		}
+		
+		return randomTopic;
 	}
 }
 

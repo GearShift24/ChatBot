@@ -4,25 +4,28 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>600</x>
-      <y>270</y>
-      <w>260</w>
-      <h>80</h>
+      <x>580</x>
+      <y>340</y>
+      <w>290</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>chat.controller :: ChatbotController
 --
 -stupidBot : Chatbot
--chatView : ChatbotViewer
+-display : ChatbotViewer("wall-e")
+-chatFrame : ChatFrame(this)
 --
 + start : void 
-+ get/set</panel_attributes>
++ get/set
++ randomTopicGenerator : randomTopic
++ useChatbotcheckers : checkedInput</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>60</x>
-      <y>160</y>
+      <x>20</x>
+      <y>250</y>
       <w>240</w>
       <h>100</h>
     </coordinates>
@@ -38,8 +41,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>610</x>
-      <y>160</y>
+      <x>590</x>
+      <y>240</y>
       <w>230</w>
       <h>80</h>
     </coordinates>
@@ -53,52 +56,134 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>310</x>
-      <y>170</y>
+      <x>300</x>
+      <y>250</y>
       <w>230</w>
-      <h>80</h>
+      <h>330</h>
     </coordinates>
     <panel_attributes>chat.model :: Chatbot
 --
-
+-memesList : ArrayList&lt;String&gt;
+-politicalTopicList : ArrayList&lt;String&gt;
+-keyboardMashList : ArrayList&lt;String&gt;
+-twitterList : ArrayList&lt;String&gt;
+-content : String
+-userName : String
+-quit : String
 --
-</panel_attributes>
++buildMemesList() : Void
++buildPoliticalList() : Void
++buildTwitterList() : Void
++lengthChecker : boolean
++contentChecker : boolean
++politicalTopicChecker : boolean
++memeChecker : boolean
++keyboardMashChecker : boolean
++quickChecker : boolean
++twitterChecker : boolean
++get/setters : *content*</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>580</x>
-      <y>140</y>
-      <w>310</w>
-      <h>220</h>
+      <x>560</x>
+      <y>220</y>
+      <w>340</w>
+      <h>300</h>
     </coordinates>
-    <panel_attributes>Note..
+    <panel_attributes>controller..
 bg=red</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>310</x>
-      <y>140</y>
+      <x>290</x>
+      <y>220</y>
       <w>250</w>
-      <h>130</h>
+      <h>380</h>
     </coordinates>
-    <panel_attributes>Note..
+    <panel_attributes>model..
 bg=blue</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>30</x>
-      <y>140</y>
+      <x>10</x>
+      <y>220</y>
       <w>270</w>
-      <h>130</h>
+      <h>460</h>
     </coordinates>
-    <panel_attributes>Note..
+    <panel_attributes>view..
 bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>360</y>
+      <w>240</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>chat.view :: ChatPanel
+--
+-baseLayout : SpringLayout
+-chatDisplay : JTextArea
+-chatField : JTextField
+-chatButton : JButton
+-chatCheckBox : JCheckBox
+--
++setupChatDisplay() : void
++setupPanel() : void
++setupLayout() : void
++ setupListeners() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>560</y>
+      <w>240</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>chat.view :: ChatFrame
+--
+chatController : baseController
+chatPanel : appPanel
+--
+setupFrame() : none
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>370</x>
+      <y>620</y>
+      <w>260</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>chat.tests : ChatbotTest</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>340</x>
+      <y>80</y>
+      <w>230</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>SAMPLE - //package and class
+--
+/data members
+--
+/constructors and methods</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
