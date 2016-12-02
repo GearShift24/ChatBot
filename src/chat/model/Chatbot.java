@@ -12,7 +12,7 @@ public class Chatbot
 	private ArrayList<String> memesList;
 	private ArrayList<String> politicalTopicList;
 	private ArrayList<String> keyboardMashList;
-	private ArrayList<String> twitterList;
+//	private ArrayList<String> twitterList;
 	private String userName;
 	private String content;
 	private String quit;
@@ -29,8 +29,8 @@ public class Chatbot
 		buildPoliticalTopicsList();
 		keyboardMashList = new ArrayList<String>();
 		buildKeyboardMashList();
-		twitterList = new ArrayList<String>();
-		buildTwitterList();
+//		twitterList = new ArrayList<String>();
+//		buildTwitterList();
 
 		
 		content = new String("Anything");
@@ -96,12 +96,12 @@ public class Chatbot
 		keyboardMashList.add(",./");
 	}
 	
-	private void buildTwitterList()
-	{
-		twitterList.add("#dw35 f");
-		twitterList.add("@d4d sretsf ");
-
-	}
+//	private void buildTwitterList()
+//	{
+//		twitterList.add("#dw35 f");
+//		twitterList.add("@d4d sretsf ");
+//
+//	}
 
 	
 	/**
@@ -223,34 +223,20 @@ public class Chatbot
 	{
 		boolean isHTML = false;
 		
-		if(currentInput.contains("<B>"))   
+		if(currentInput.indexOf("<") == 0 && currentInput.indexOf(">") == 2)   
+	
 				{
-			isHTML = true;
-				}
+			if(currentInput.indexOf("B") == 1 && currentInput.indexOf("I") == 1 )
+			{
+				isHTML = true;
+			}
 			
-		if(currentInput.contains("</B>"))   
-			{
-			isHTML = true;
-			}
+			
+			
+		}
 		
-		if(currentInput.contains("<I>"))   
-			{
-			isHTML = true;
-			}
-		
-		if(currentInput.contains("</i>"))   
-			{
-			isHTML = true;
-			}
-		
-		if(currentInput.contains("<A HREF=\"sdfs.html\">"))   
-			{
-			isHTML = true;
-			}
-		if(currentInput.contains("</a>"))   
-			{
-			isHTML = true;
-			}
+	
+			
 			
 			
 //			
@@ -266,9 +252,8 @@ public class Chatbot
 	public boolean twitterChecker(String currentInput)
 	{
 		boolean hasTwitterResponse = false;
-		for( int index =0; index <twitterList.size(); index++)
 		
-		if(currentInput.contains(twitterList.get(index)))
+		if(currentInput.substring(0).equalsIgnoreCase("#dw35 f") || currentInput.substring(0).equalsIgnoreCase("@d4d sretsf "))
 		{
 			hasTwitterResponse = true;
 		}
