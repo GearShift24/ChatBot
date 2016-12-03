@@ -223,28 +223,41 @@ public class Chatbot
 	{
 		boolean isHTML = false;
 		
-		if(currentInput.indexOf("<") == 0 && currentInput.indexOf(">") == 2)   
-	
+		if(currentInput.indexOf("<") == 0 && currentInput.indexOf(">") == 2 || currentInput.indexOf(">") == 21)   																				
 				{
-			if(currentInput.indexOf("B") == 1 && currentInput.indexOf("I") == 1 )
+			if(currentInput.indexOf("B") == 1 || currentInput.indexOf("I") == 1 || currentInput.indexOf("A") == 1 || currentInput.indexOf("A HREF=\"sdfs.html\"") == 1)
+			{
+				if(currentInput.lastIndexOf(">") == 0  && currentInput.lastIndexOf("<") == 3 && currentInput.lastIndexOf("/") == 2)
+				{
+					if(currentInput.lastIndexOf("B") == 1 || currentInput.lastIndexOf("i") == 1 || currentInput.lastIndexOf("a") == 1 )
+					{
+						isHTML = true;
+					}
+				}
+			}
+				}
+		
+		//for p with no end tag
+		
+		if(currentInput.indexOf("<") == 0 && currentInput.indexOf(">") == 2)
+				{
+			if(currentInput.indexOf("P") == 1)	
 			{
 				isHTML = true;
 			}
-			
-			
-			
-		}
+				}
 		
-	
-			
-			
-			
-//			
-//				.indexOf1 < .indexOf2
-			
-			
 		
+//		if(currentInput.indexOf("<") == 0 && currentInput.indexOf(">") == 2 && currentInput.indexOf("b") == 1)
+//		{
+//			if(currentInput.indexOf(">", 9) == 0 && currentInput.indexOf("B",8) == 0 && currentInput.indexOf("/",7) == 0 && currentInput.indexOf("<",6) == 0)	
+//			{
+//		isHTML = true;
+//			}
+//		}
+				
 		return isHTML;
+		
 	}
 	
 	
