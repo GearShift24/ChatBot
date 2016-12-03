@@ -3,7 +3,11 @@ package chat.controller;
 import chat.model.Chatbot;
 import chat.view.ChatFrame;
 import chat.view.ChatbotViewer;
-
+/**
+ * The controller that gives commands to the programs other pieces MVC approach
+ * @author joey Wrigley
+ *12/2/2016
+ */
 public class ChatController
 {
 	private Chatbot stupidBot;
@@ -21,14 +25,20 @@ public class ChatController
 		randomTopicGenerator();
 	}
 	
-	
+	/**
+	 * Starts up the program, ran from runner
+	 */
 		public void start()
 		{
 		
 
 		}
 	
-	
+	/**
+	 * This method see if any of the checkers are activated and responds with pre-made quotes
+	 * @param input The input given by the user
+	 * @return  is the response by one of the checkers confirmed true that is given to the bot
+	 */
 	public String useChatbotCheckers(String input)
 	{
 	String checkedInput = "";
@@ -77,17 +87,26 @@ public class ChatController
 		return checkedInput;
 	}
 	
-	
+	/**
+	 * starts up chatbot for use
+	 * @return gives back chatbot for use
+	 */
 	public Chatbot getChatbot()
 	{
 		return stupidBot;
 	}
-	
+	/**
+	 * grabs the frame instructions
+	 * @return gives back the frame instructions
+	 */
 	public ChatFrame getBaseFrame()
 	{
 		return chatFrame;
 	}
-
+/**
+ * Generates a random topic from 7 options
+ * @return Is what random topic that was chosen is returned
+ */
 	private String randomTopicGenerator()
 	{
 		String randomTopic = "";

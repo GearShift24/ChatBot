@@ -12,14 +12,16 @@ public class Chatbot
 	private ArrayList<String> memesList;
 	private ArrayList<String> politicalTopicList;
 	private ArrayList<String> keyboardMashList;
-//	private ArrayList<String> twitterList;
 	private String userName;
 	private String content;
 	private String quit;
 
 	/**
-	 * * Creates an instance of the Chatbot with the supplied username. * @param
-	 * userName The username for the chatbot.
+	 * * Creates an instance of the Chatbot with the supplied username.  
+	 * @userName The username for the chatbot.
+	 * 
+	 */
+	/**
 	 */
 	public Chatbot(String userName)
 	{
@@ -29,8 +31,6 @@ public class Chatbot
 		buildPoliticalTopicsList();
 		keyboardMashList = new ArrayList<String>();
 		buildKeyboardMashList();
-//		twitterList = new ArrayList<String>();
-//		buildTwitterList();
 
 		
 		content = new String("Anything");
@@ -39,7 +39,9 @@ public class Chatbot
 		this.userName = userName;
 		this.quit = "quit";
 	}
-
+/**
+ * creates a list of memes that is later used to check if the user inputed anything in the list
+ */
 	private void buildMemesList()
 	{
 		memesList.add("doge");
@@ -62,7 +64,9 @@ public class Chatbot
 		memesList.add("excuse me princess");
 		memesList.add("mah boy");
 	}
-
+/**
+ * creates a list of political topics that is later used to check if the user inputed anything in the list
+ */
 	private void buildPoliticalTopicsList()
 	{
 		politicalTopicList.add("Democrat");
@@ -87,7 +91,9 @@ public class Chatbot
 		politicalTopicList.add("russia");
 
 	}
-
+/**
+ * creates a list of keyboardMashing that is later used to check if the user inputed anything in the list
+ */
 	private void buildKeyboardMashList()
 	{
 		keyboardMashList.add("sdf");
@@ -95,13 +101,7 @@ public class Chatbot
 		keyboardMashList.add("cvb");
 		keyboardMashList.add(",./");
 	}
-	
-//	private void buildTwitterList()
-//	{
-//		twitterList.add("#dw35 f");
-//		twitterList.add("@d4d sretsf ");
-//
-//	}
+
 
 	
 	/**
@@ -191,10 +191,13 @@ public class Chatbot
 	}
 
 	/**
-	 * * Returns the username of this Chatbot instance. * @return The username
-	 * of the Chatbot.
+	 * checks to see if the user input is key mashing. 
+	 * returns true if it finds a matchand false if it doesnt
+	 * 
+	 * @param currentInput
+	 *            The supplied String to be checked. * @return Whether the
+	 *            supplied String is a keyboard mash
 	 */
-	
 	public boolean keyboardMashChecker(String currentInput)
 		{	boolean isMash = false;
 				for( int index =0; index <keyboardMashList.size(); index++)
@@ -205,7 +208,14 @@ public class Chatbot
 					}
 				return isMash;
 		}
-	
+	/**
+	 * checks to see if user input is the quit command
+	 * returns true if it finds a matchand false if it doesnt
+	 * 
+	 * @param currentInput
+	 *            The supplied String to be checked. * @return Whether the
+	 *            supplied String is the command to quit
+	 */
 	public boolean quitChecker(String currentInput)
 	{
 		boolean hasQuit = false;
@@ -218,7 +228,14 @@ public class Chatbot
 		return hasQuit;
 		
 	}
-	
+	/**
+	 * checks to see if user input is html
+	 * returns true if it finds a matchand false if it doesnt
+	 * 
+	 * @param currentInput
+	 *            The supplied String to be checked. * @return Whether the
+	 *            supplied String is a html input
+	 */
 	public boolean inputHTMLChecker(String currentInput)
 	{
 		boolean isHTML = false;
@@ -261,7 +278,14 @@ public class Chatbot
 	}
 	
 	
-	
+	/**
+	 * checks to see if the user input is about twitter
+	 * returns true if it finds a matchand false if it doesnt
+	 * 
+	 * @param currentInput
+	 *            The supplied String to be checked. * @return Whether the
+	 *            supplied String is a twitter handle
+	 */
 	public boolean twitterChecker(String currentInput)
 	{
 		boolean hasTwitterResponse = false;
@@ -273,9 +297,14 @@ public class Chatbot
 		
 		return hasTwitterResponse;
 	}
-//	
+
 	
-	
+	/**
+		 * * Returns the username for this Chatbot instance. * 
+		 * returns true if it finds a matchand false if it doesnt
+		 * 
+		 * @return The username area for this Chatbot instance.
+	 */
 	public String getUserName()
 	{
 		return userName;
@@ -298,7 +327,10 @@ public class Chatbot
 	{
 		return memesList;
 	}
-
+	/**
+	 * getter method for the keyboardMaster object
+	 * @return refrence to keyboardmashlist
+	 */
 	public ArrayList<String> getKeyboardMashList()
 	{
 		return keyboardMashList;

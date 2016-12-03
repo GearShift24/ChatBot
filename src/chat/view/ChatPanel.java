@@ -9,16 +9,25 @@ import java.awt.event.ItemListener;
 import java.awt.Font;
 
 import chat.controller.ChatController;
-
+/**
+ * The panel is where you chat with the bot, and where the data members that are interactable/seen are placed
+ * @author joey Wrigley
+ *12/2/2016
+ */
 public class ChatPanel extends JPanel
 {
+	/**
+	 * creates objects to later be innitated and used
+	 */
 	private ChatController baseController;
 	private SpringLayout baseLayout;
 	private JTextArea chatDisplay;
 	private JTextField chatField;
 	private JButton chatButton;
 	private JCheckBox chatCheckBox;
-	
+	/*
+	 * inits objects and sets the controller
+	 */
 	public ChatPanel(ChatController baseController)
 	{
 		super();
@@ -36,7 +45,9 @@ public class ChatPanel extends JPanel
 		setupListeners();
 	}
 	
-	
+	/*
+	 * setsup the chatdisplay which is used to chat with the user
+	 */
 	private void setupChatDisplay()
 	{
 		chatDisplay.setEditable(false);
@@ -46,7 +57,9 @@ public class ChatPanel extends JPanel
 		
 	}
 	
-	
+	/*
+	 * sets up properties of panel and adds objects into panel
+	 */
 	private void setupPanel()
 	{
 		this.setLayout(baseLayout);
@@ -56,7 +69,9 @@ public class ChatPanel extends JPanel
 		this.add(chatField);
 		this.add(chatCheckBox);
 	}
-	
+	/*
+	 * setups the auto generated code that changes orientation of all objects inside the panel
+	 */
 	private void setupLayout()
 	{		baseLayout.putConstraint(SpringLayout.EAST, chatButton, -76, SpringLayout.EAST, this);
 	baseLayout.putConstraint(SpringLayout.EAST, chatDisplay, 0, SpringLayout.EAST, chatButton);
@@ -67,7 +82,10 @@ public class ChatPanel extends JPanel
 	baseLayout.putConstraint(SpringLayout.NORTH, chatCheckBox, 0, SpringLayout.NORTH, chatField);
 	baseLayout.putConstraint(SpringLayout.EAST, chatCheckBox, -8, SpringLayout.WEST, chatField);
 	}
-	
+	/*
+	 * method that gives code connection to when gui is pressed
+	 * When clicked the bot will take in your code
+	 */
 	private void setupListeners()
 	{
 		chatButton.addActionListener(new ActionListener()
