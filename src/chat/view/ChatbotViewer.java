@@ -1,7 +1,11 @@
 package chat.view;
 
 import javax.swing.JOptionPane;
+
 import javax.swing.ImageIcon;
+/**
+ * imported JOptionPane to create a popout and ImageIcon to allow for an icon to be placed.
+ */
 /**
  * The view creates what the bot used to say and what was said back
  * @author joey Wrigley

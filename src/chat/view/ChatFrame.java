@@ -2,8 +2,12 @@ package chat.view;
 
 
 import javax.swing.JFrame;
+
 import chat.controller.ChatController;
 import java.awt.Dimension;
+/**
+ * imports Jframe for the basic frame, the controller to controll the frame, and dimensions to choose dimensions
+ */
 /**
  * The frame creates the area where a panel can be places and sets size / visibility 
  * @author joey Wrigley

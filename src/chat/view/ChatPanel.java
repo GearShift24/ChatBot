@@ -10,6 +10,9 @@ import java.awt.Font;
 
 import chat.controller.ChatController;
 /**
+ * imported many awt and swing files to change design and shape of GUI. Imported controller to allow control of panel.
+ */
+/**
  * The panel is where you chat with the bot, and where the data members that are interactable/seen are placed
  * @author joey Wrigley
  *12/2/2016

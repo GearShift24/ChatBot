@@ -1,8 +1,12 @@
 package chat.controller;
 
 import chat.model.Chatbot;
+
 import chat.view.ChatFrame;
 import chat.view.ChatbotViewer;
+/**
+ * imports the frame viewer and model to be manipulated with
+ */
 /**
  * The controller that gives commands to the programs other pieces MVC approach
  * @author joey Wrigley

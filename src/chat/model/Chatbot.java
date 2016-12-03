@@ -1,6 +1,9 @@
 package chat.model;
 
 import java.util.ArrayList;
+/**
+ * imported ArrayLists in order to make better arrays to be used in checkers
+ */
 
 /**
  * Base version of the 2015 Chatbot class. Only stub methods are provided.
