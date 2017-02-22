@@ -1,6 +1,7 @@
 package chat.view;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -28,6 +29,8 @@ public class ChatPanel extends JPanel
 	private JTextField chatField;
 	private JButton chatButton;
 	private JCheckBox chatCheckBox;
+	
+	private JScrollPane chatScroll;
 	/*
 	 * inits objects and sets the controller
 	 */
@@ -39,9 +42,24 @@ public class ChatPanel extends JPanel
 		baseLayout = new SpringLayout();
 		chatDisplay = new JTextArea(5,25);
 		chatField = new JTextField(25);
+		baseLayout.putConstraint(SpringLayout.SOUTH, chatField, -264, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.EAST, chatField, -301, SpringLayout.EAST, this);
 		chatButton = new JButton("Chat with the bot nerrrrd!");
+		baseLayout.putConstraint(SpringLayout.NORTH, chatButton, 19, SpringLayout.SOUTH, chatField);
+		baseLayout.putConstraint(SpringLayout.WEST, chatButton, 136, SpringLayout.WEST, this);
 		chatCheckBox = new JCheckBox("CHANGE TO CODE FORM", false);
-
+		baseLayout.putConstraint(SpringLayout.NORTH, chatCheckBox, 10, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, chatCheckBox, 502, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.EAST, chatCheckBox, -10, SpringLayout.EAST, this);
+		chatScroll = new JScrollPane();
+		baseLayout.putConstraint(SpringLayout.NORTH, chatField, 17, SpringLayout.SOUTH, chatScroll);
+		baseLayout.putConstraint(SpringLayout.WEST, chatField, 0, SpringLayout.WEST, chatScroll);
+		baseLayout.putConstraint(SpringLayout.WEST, chatScroll, 89, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.EAST, chatScroll, -307, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, chatScroll, 51, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, chatScroll, -311, SpringLayout.SOUTH, this);
+		chatScroll.setViewportView(chatDisplay);
+		
 		setupChatDisplay();
 		setupPanel();
 		setupLayout();
@@ -53,6 +71,7 @@ public class ChatPanel extends JPanel
 	 */
 	private void setupChatDisplay()
 	{
+		
 		chatDisplay.setEditable(false);
 		chatDisplay.setEnabled(false);
 		chatDisplay.setWrapStyleWord(true);
@@ -66,24 +85,27 @@ public class ChatPanel extends JPanel
 	private void setupPanel()
 	{
 		this.setLayout(baseLayout);
+		this.setPreferredSize(new Dimension(700, 450));
 		this.setBackground(Color.MAGENTA);
 		this.add(chatButton);
-		this.add(chatDisplay);
+//		this.add(chatDisplay);
 		this.add(chatField);
 		this.add(chatCheckBox);
+		
+		
+		
+		this.add(chatScroll);
+	
+		
+		
 	}
 	/*
 	 * setups the auto generated code that changes orientation of all objects inside the panel
 	 */
 	private void setupLayout()
-	{		baseLayout.putConstraint(SpringLayout.EAST, chatButton, -76, SpringLayout.EAST, this);
+	{
 	baseLayout.putConstraint(SpringLayout.EAST, chatDisplay, 0, SpringLayout.EAST, chatButton);
-	baseLayout.putConstraint(SpringLayout.NORTH, chatButton, 209, SpringLayout.NORTH, this);
-	baseLayout.putConstraint(SpringLayout.SOUTH, chatField, -29, SpringLayout.NORTH, chatButton);
-	baseLayout.putConstraint(SpringLayout.EAST, chatField, 0, SpringLayout.EAST, chatButton);
 	baseLayout.putConstraint(SpringLayout.NORTH, chatDisplay, 34, SpringLayout.NORTH, this);
-	baseLayout.putConstraint(SpringLayout.NORTH, chatCheckBox, 0, SpringLayout.NORTH, chatField);
-	baseLayout.putConstraint(SpringLayout.EAST, chatCheckBox, -8, SpringLayout.WEST, chatField);
 	}
 	/*
 	 * method that gives code connection to when gui is pressed
