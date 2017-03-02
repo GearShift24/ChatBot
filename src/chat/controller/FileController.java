@@ -59,8 +59,6 @@ public static String readFile(ChatController baseController, String fileName)
 		{
 			baseController.handleErrors(fileError);
 		}
-		
 		return fileContents;
 	}
-
 }
