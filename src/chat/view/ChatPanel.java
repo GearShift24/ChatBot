@@ -48,7 +48,7 @@ public class ChatPanel extends JPanel
 		chatDisplay = new JTextArea(5,25);
 		chatField = new JTextField(25);
 		chatButton = new JButton("Chat with the bot nerrrrd!");
-		chatCheckBox = new JCheckBox("CHANGE TO CODE FORM", false);
+		chatCheckBox = new JCheckBox("Change Font", false);
 		chatPane = new JScrollPane();
 
 		
@@ -103,7 +103,7 @@ public class ChatPanel extends JPanel
 		
 		
 		this.add(chatPane);
-	
+		
 		
 		
 	}
