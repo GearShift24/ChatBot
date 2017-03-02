@@ -30,6 +30,11 @@ public class ChatPanel extends JPanel
 	private JButton chatButton;
 	private JCheckBox chatCheckBox;
 	
+	private JButton sendTweetButton;
+	private JButton searchTwitterButton;
+	private JButton saveChatButton;
+	private JButton loadChatButton;
+	
 	private JScrollPane chatScroll;
 	/*
 	 * inits objects and sets the controller
@@ -42,23 +47,19 @@ public class ChatPanel extends JPanel
 		baseLayout = new SpringLayout();
 		chatDisplay = new JTextArea(5,25);
 		chatField = new JTextField(25);
-		baseLayout.putConstraint(SpringLayout.SOUTH, chatField, -264, SpringLayout.SOUTH, this);
-		baseLayout.putConstraint(SpringLayout.EAST, chatField, -301, SpringLayout.EAST, this);
 		chatButton = new JButton("Chat with the bot nerrrrd!");
-		baseLayout.putConstraint(SpringLayout.NORTH, chatButton, 19, SpringLayout.SOUTH, chatField);
-		baseLayout.putConstraint(SpringLayout.WEST, chatButton, 136, SpringLayout.WEST, this);
 		chatCheckBox = new JCheckBox("CHANGE TO CODE FORM", false);
-		baseLayout.putConstraint(SpringLayout.NORTH, chatCheckBox, 10, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, chatCheckBox, 502, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.EAST, chatCheckBox, -10, SpringLayout.EAST, this);
 		chatScroll = new JScrollPane();
-		baseLayout.putConstraint(SpringLayout.NORTH, chatField, 17, SpringLayout.SOUTH, chatScroll);
-		baseLayout.putConstraint(SpringLayout.WEST, chatField, 0, SpringLayout.WEST, chatScroll);
-		baseLayout.putConstraint(SpringLayout.WEST, chatScroll, 89, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.EAST, chatScroll, -307, SpringLayout.EAST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, chatScroll, 51, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, chatScroll, -311, SpringLayout.SOUTH, this);
 		chatScroll.setViewportView(chatDisplay);
+		
+		
+		
+		
+		
+		sendTweetButton = new JButton("send A Tweet");
+		searchTwitterButton = new JButton("Search Twitter");
+		saveChatButton = new JButton("save chat");
+		loadChatButton = new JButton("load chat");
 		
 		setupChatDisplay();
 		setupPanel();
@@ -92,6 +93,10 @@ public class ChatPanel extends JPanel
 		this.add(chatField);
 		this.add(chatCheckBox);
 		
+		this.add(sendTweetButton);
+		this.add(searchTwitterButton);
+		this.add(saveChatButton);
+		this.add(loadChatButton);
 		
 		
 		this.add(chatScroll);
@@ -106,6 +111,27 @@ public class ChatPanel extends JPanel
 	{
 	baseLayout.putConstraint(SpringLayout.EAST, chatDisplay, 0, SpringLayout.EAST, chatButton);
 	baseLayout.putConstraint(SpringLayout.NORTH, chatDisplay, 34, SpringLayout.NORTH, this);
+	baseLayout.putConstraint(SpringLayout.SOUTH, chatField, -264, SpringLayout.SOUTH, this);
+	baseLayout.putConstraint(SpringLayout.EAST, chatField, -301, SpringLayout.EAST, this);
+	baseLayout.putConstraint(SpringLayout.NORTH, loadChatButton, 0, SpringLayout.NORTH, sendTweetButton);
+	baseLayout.putConstraint(SpringLayout.EAST, loadChatButton, 0, SpringLayout.EAST, chatField);
+	baseLayout.putConstraint(SpringLayout.NORTH, saveChatButton, 0, SpringLayout.NORTH, searchTwitterButton);
+	baseLayout.putConstraint(SpringLayout.EAST, saveChatButton, 0, SpringLayout.EAST, chatField);
+	baseLayout.putConstraint(SpringLayout.NORTH, sendTweetButton, 6, SpringLayout.SOUTH, searchTwitterButton);
+	baseLayout.putConstraint(SpringLayout.WEST, sendTweetButton, 0, SpringLayout.WEST, searchTwitterButton);
+	baseLayout.putConstraint(SpringLayout.WEST, searchTwitterButton, 80, SpringLayout.WEST, this);
+	baseLayout.putConstraint(SpringLayout.SOUTH, searchTwitterButton, -153, SpringLayout.SOUTH, this);
+	baseLayout.putConstraint(SpringLayout.NORTH, chatField, 17, SpringLayout.SOUTH, chatScroll);
+	baseLayout.putConstraint(SpringLayout.WEST, chatField, 0, SpringLayout.WEST, chatScroll);
+	baseLayout.putConstraint(SpringLayout.WEST, chatScroll, 89, SpringLayout.WEST, this);
+	baseLayout.putConstraint(SpringLayout.EAST, chatScroll, -307, SpringLayout.EAST, this);
+	baseLayout.putConstraint(SpringLayout.NORTH, chatScroll, 51, SpringLayout.NORTH, this);
+	baseLayout.putConstraint(SpringLayout.SOUTH, chatScroll, -311, SpringLayout.SOUTH, this);
+	baseLayout.putConstraint(SpringLayout.NORTH, chatCheckBox, 10, SpringLayout.NORTH, this);
+	baseLayout.putConstraint(SpringLayout.WEST, chatCheckBox, 502, SpringLayout.WEST, this);
+	baseLayout.putConstraint(SpringLayout.EAST, chatCheckBox, -10, SpringLayout.EAST, this);
+	baseLayout.putConstraint(SpringLayout.NORTH, chatButton, 19, SpringLayout.SOUTH, chatField);
+	baseLayout.putConstraint(SpringLayout.WEST, chatButton, 136, SpringLayout.WEST, this);
 	}
 	/*
 	 * method that gives code connection to when gui is pressed
