@@ -159,6 +159,12 @@ public class ChatController
 		
 		return randomTopic;
 	}
+	
+	
+	public void handleErrors(Exception currentException){
+		display.displayMessage("An arror has occurred. Details provided next.");
+		display.displayMessage(currentException.getMessage());
+	}
 }
 
 

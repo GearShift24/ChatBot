@@ -36,7 +36,7 @@ public class ChatFrame extends JFrame
 	{
 		this.setContentPane(appPanel);
 		this.setTitle("Fem-Shep Chat");
-		this.setSize(new Dimension(630,400));
+		this.setSize(new Dimension(1280,720));
 		this.setResizable(false);
 		this.setVisible(true);
 		
