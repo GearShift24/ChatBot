@@ -101,6 +101,7 @@ public class ChatPanel extends JPanel
 		this.add(searchTwitterButton);
 		this.add(saveChatButton);
 		this.add(loadChatButton);
+		saveChatButton.setToolTipText("put a name in the textfield for file name");
 		
 		
 		this.add(chatPane);
@@ -184,9 +185,25 @@ public class ChatPanel extends JPanel
 		{
 			String fileName = chatField.getText();
 			
-			FileController.saveFile(baseController, fileName, chatDisplay.getText());
+			FileController.saveFile(baseController, fileName.trim(), chatDisplay.getText());
 		}
 			});
+	
+	
+	
+	
+	loadChatButton.addActionListener(new ActionListener()
+	{
+public void actionPerformed(ActionEvent click)
+{
+	String fileName = chatField.getText() + ".txt";
+	String saved = FileController.readFile(baseController, fileName );
+	chatDisplay.setText(saved);
+}
+	});
+	
+	
+	
 	}
 	
 }
