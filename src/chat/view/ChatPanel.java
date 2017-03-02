@@ -10,6 +10,7 @@ import java.awt.event.ItemListener;
 import java.awt.Font;
 
 import chat.controller.ChatController;
+import chat.controller.FileController;
 /**
  * imported many awt and swing files to change design and shape of GUI. Imported controller to allow control of panel.
  */
@@ -177,6 +178,15 @@ public class ChatPanel extends JPanel
 	});
 //	
 	
+	saveChatButton.addActionListener(new ActionListener()
+			{
+		public void actionPerformed(ActionEvent click)
+		{
+			String fileName = chatField.getText();
+			
+			FileController.saveFile(baseController, fileName, chatDisplay.getText());
+		}
+			});
 	}
 	
 }
