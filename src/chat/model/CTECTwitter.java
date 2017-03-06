@@ -13,12 +13,13 @@ public class CTECTwitter
 	private ChatController baseController;
 	private Twitter chatbotTwitter;
 	private List<Status> searchedTweets;
-	
+	private List<String> ignoredWords;
 	
 	public CTECTwitter(ChatController baseController)
 	{
 		this.baseController = baseController;
 		searchedTweets = new ArrayList<Status>();
+		ignoredWords = new ArrayList<String>();
 		this.chatbotTwitter = TwitterFactory.getSingleton();
 		
 	}
@@ -39,4 +40,24 @@ public class CTECTwitter
 		}
 	}
 	
+
+
+
+private void createIgnoredWordList()
+{
+	
+}
+
+
+private void collectTweets(String username)
+{
+	
+}
+
+
+public String getMostCommonWord()
+{
+	return null;
+}
+
 }
