@@ -204,6 +204,31 @@ public void actionPerformed(ActionEvent click)
 	
 	
 	
+	
+//	searchTwitterButton.addActionListener(new ActionListener()
+//	{
+//public void actionPerformed(ActionEvent click)
+//{
+//	
+//}
+//	});
+	
+	
+	
+	
+	
+	
+	
+	sendTweetButton.addActionListener(new ActionListener()
+	{
+public void actionPerformed(ActionEvent click)
+{
+	baseController.useTwitter(chatField.getText());
+}
+	});
+	
+	
+	
 	}
 	
 }
