@@ -4,17 +4,21 @@ import chat.controller.ChatController;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.Twitter;
+import twitter4j.Status;
+import java.util.*;
+
 
 public class CTECTwitter
 {
 	private ChatController baseController;
 	private Twitter chatbotTwitter;
-	
+	private List<Status> searchedTweets;
 	
 	
 	public CTECTwitter(ChatController baseController)
 	{
 		this.baseController = baseController;
+		searchedTweets = new ArrayList<Status>();
 		this.chatbotTwitter = TwitterFactory.getSingleton();
 		
 	}
@@ -23,7 +27,7 @@ public class CTECTwitter
 	{
 		try
 		{
-			chatbotTwitter.updateStatus("Joe W just tweeted from my Java Chatbot program 2017! #APCSRocks @CTECNow Thanks @cscheerleader & @codyhenrichsen! @ChatbotCTEC");
+			chatbotTwitter.updateStatus(textToTweet);
 		}
 		catch(TwitterException tweetError)
 		{
