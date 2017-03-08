@@ -205,13 +205,14 @@ public void actionPerformed(ActionEvent click)
 	
 	
 	
-//	searchTwitterButton.addActionListener(new ActionListener()
-//	{
-//public void actionPerformed(ActionEvent click)
-//{
-//	
-//}
-//	});
+	searchTwitterButton.addActionListener(new ActionListener()
+	{
+public void actionPerformed(ActionEvent click)
+{
+	String results = baseController.searchTwitterUser(chatField.getText());
+	chatDisplay.append(results);
+}
+	});
 	
 	
 	
