@@ -184,8 +184,10 @@ public class ChatController
 	public String searchTwitterUser(String userNameToSearch)
 	{
 		String searchResults = "";
-		searchResults = "The most popular word by user: " + userNameToSearch + "is: " + searchResults;
+		searchResults = "The most popular word by user: " + userNameToSearch + " is: " + searchResults;
 		searchResults += twitterBot.getMostCommonWord(userNameToSearch);
 		return searchResults;
 	}
+	
+
 }
