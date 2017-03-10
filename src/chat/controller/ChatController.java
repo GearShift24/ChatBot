@@ -165,7 +165,8 @@ public class ChatController
 	}
 	
 	
-	public void handleErrors(Exception currentException){
+	public void handleErrors(Exception currentException)
+	{
 		display.displayMessage("An arror has occurred. Details provided next.");
 		display.displayMessage(currentException.getMessage());
 	}
@@ -184,7 +185,7 @@ public class ChatController
 	public String searchTwitterUser(String userNameToSearch)
 	{
 		String searchResults = "";
-		searchResults = "The most popular word by user: " + userNameToSearch + " is: " + searchResults;
+		searchResults = "The most popular word by user " + userNameToSearch + " is: " + searchResults;
 		searchResults += twitterBot.getMostCommonWord(userNameToSearch);
 		return searchResults;
 	}

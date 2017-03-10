@@ -5,6 +5,8 @@ import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.Twitter;
 import twitter4j.Status;
+
+import java.text.DecimalFormat;
 import java.util.*;
 import twitter4j.*;
 import java.util.Scanner;
@@ -99,19 +101,18 @@ public String getMostCommonWord(String user)
 	removeAllBoringWords();
 	removeEmptyText();
 	
-	results += "There are " + tweetedWords.size() + " words in the tweets from " + user;	
+	results +=  calculatePopularWordAndCount();	
 	return results;
 }
 
 
 private void removeEmptyText()
 {
-	for(int index = 0; index < tweetedWords.size(); index++)
+	for(int index = tweetedWords.size() -1; index >= 0; index--)
 	{
 		if(tweetedWords.get(index).trim().equals(""))
 		{
 			tweetedWords.remove(index);
-			index--;
 		}
 	 }
    }
@@ -128,6 +129,7 @@ private void removeEmptyText()
 				{
 				tweetedWords.remove(index);
 				index--;
+				boringIndex = boringWords.length;
 				}
 			}
 		}
@@ -142,7 +144,7 @@ private void removeEmptyText()
 			String [] tweetWords = tweetText.split(" ");
 			for(int index = 0; index < tweetWords.length; index++)
 			{
-				tweetedWords.add(tweetWords[index]);
+				tweetedWords.add(removePunctuation(tweetWords[index]));
 			}
 			
 		}
@@ -152,7 +154,7 @@ private void removeEmptyText()
 	{
 		String information = "";
 		String mostPopular = "";
-		int popularIndex = 0;
+		int popularIndex = -1;
 		int popularCount = 0;
 		
 		for(int index = 0; index < tweetedWords.size(); index++)
@@ -160,7 +162,7 @@ private void removeEmptyText()
 			int currentPopularity = 0;
 			for(int searched = index + 1; searched < tweetedWords.size(); searched++)
 			{
-				if(tweetedWords.get(index).equalsIgnoreCase(tweetedWords.get(searched)))
+				if(tweetedWords.get(index).equalsIgnoreCase(tweetedWords.get(searched)) )
 				{
 					currentPopularity++;
 				}
@@ -173,8 +175,26 @@ private void removeEmptyText()
 					}
 		}
 		
-		information = "The most popular word is: " + mostPopular + ", and it occured " + popularCount +  " times out of " + tweetedWords.size() + ", AKA " + ((double) popularCount)/tweetedWords.size() + "%";
+		information = " " + mostPopular + ", and it occured " + popularCount +  " times out of " + tweetedWords.size() + ", AKA " + (DecimalFormat.getPercentInstance().format(((double) popularCount)/tweetedWords.size()));
 		return information;
+	}
+	
+	
+	
+	
+	private String removePunctuation(String currentString)
+	{
+		String punctuation = ".,`?!:;(){}[]<>";
+		
+		String scrubbedString = "";
+		for(int i = 0; i < currentString.length(); i++)
+		{
+			if(punctuation.indexOf(currentString.charAt(i)) == -1)
+			{
+				scrubbedString += currentString.charAt(i);
+			}
+		}
+		return scrubbedString;
 	}
 }
 
