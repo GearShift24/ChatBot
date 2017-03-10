@@ -5,7 +5,6 @@ import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.Twitter;
 import twitter4j.Status;
-
 import java.text.DecimalFormat;
 import java.util.*;
 import twitter4j.*;
@@ -17,6 +16,7 @@ public class CTECTwitter
 	private Twitter chatbotTwitter;
 	private List<Status> searchedTweets;
 	private List<String> tweetedWords;
+
 	
 	public CTECTwitter(ChatController baseController)
 	{
@@ -195,6 +195,67 @@ private void removeEmptyText()
 			}
 		}
 		return scrubbedString;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	public String memeInvestigation()	//I want this to compare 2 locations and see who memes more.
+	{
+		String results = "";
+		int memers1 = 0;
+		int memers2 = 0;
+		
+		for(int index = 0; index < baseController.getChatbot().getMemesList().size(); index++)
+		{
+			Query query = new Query(baseController.getChatbot().getMemesList().get(index));
+			query.setCount(1000);
+			query.setGeoCode(new GeoLocation(baseController.getlocation1x, location1y), 10, Query.KILOMETERS);
+			query.setSince("2017-3");
+			
+			try
+			{
+				QueryResult result = chatbotTwitter.search(query);
+				memers1 +=  result.getCount();
+			}
+			catch (TwitterException error)
+			{
+				error.printStackTrace();
+			}
+		}
+		
+		
+		for(int index = 0; index < baseController.getChatbot().getMemesList().size(); index++)
+		{
+			Query query = new Query(baseController.getChatbot().getMemesList().get(index));
+			query.setCount(1000);
+			query.setGeoCode(new GeoLocation(location2x, location2y), 10, Query.KILOMETERS);
+			query.setSince("2017-3");
+			
+			try
+			{
+				QueryResult result = chatbotTwitter.search(query);
+				memers2 +=  result.getCount();
+			}
+			catch (TwitterException error)
+			{
+				error.printStackTrace();
+			}
+		}
+
+
+		
+		
+//	
+		
+		
+		results = "The first place CTEC had " + memers1 + " memers,  compared to the second place which had " + memers2 + " memers";
+		
+		return results;
 	}
 }
 

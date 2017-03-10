@@ -66,6 +66,27 @@ public class Chatbot
 		memesList.add("link");
 		memesList.add("excuse me princess");
 		memesList.add("mah boy");
+		memesList.add("we are number one");
+		memesList.add("what in tarnation");
+		memesList.add("idubbz");
+		memesList.add("filthyFrank");
+		memesList.add("shooting stars");
+		memesList.add("dunkey");
+		memesList.add("bee movie");
+		memesList.add("gaming curios");
+		memesList.add("exploding brain");
+		memesList.add("in spanish");
+		memesList.add("pepe");
+		memesList.add("milk");
+		memesList.add("and so the plot thickens");
+		memesList.add("cash me outside");
+		
+		
+		
+		
+		
+		
+		
 	}
 /**
  * creates a list of political topics that is later used to check if the user inputed anything in the list
@@ -181,7 +202,7 @@ public class Chatbot
 	{
 		boolean isMeme = false;
 		
-		for ( int index =0; index <memesList.size(); index++)
+		for ( int index =0; index < memesList.size(); index++)
 		
 		if(currentInput.equalsIgnoreCase(memesList.get(index)))
 		{

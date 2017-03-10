@@ -209,7 +209,7 @@ public void actionPerformed(ActionEvent click)
 	{
 public void actionPerformed(ActionEvent click)
 {
-	String results = baseController.searchTwitterUser(chatField.getText());
+	String results = baseController.searchMemers(chatField.getText());
 	chatDisplay.append(results);
 }
 	});

@@ -190,5 +190,19 @@ public class ChatController
 		return searchResults;
 	}
 	
+	
+	public String searchMemers(double location1x,double  location1y, double location2x, double location2y)
+	{
+		String memersResults = "";
+		location1x = 
+		location1y = 
+		location2x =  
+		location2y = 
+		
+		
+		memersResults = twitterBot.memeInvestigation();
+		return memersResults;
+	}
+	
 
 }
