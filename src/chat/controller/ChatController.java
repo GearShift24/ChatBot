@@ -5,6 +5,8 @@ import chat.model.Chatbot;
 
 import chat.view.ChatFrame;
 import chat.view.ChatbotViewer;
+import twitter4j.GeoLocation;
+import twitter4j.Query;
 /**
  * imports the frame viewer and model to be manipulated with
  */
@@ -19,6 +21,8 @@ public class ChatController
 	private ChatbotViewer display;
 	private ChatFrame chatFrame;	
 	private CTECTwitter twitterBot;
+	public double locationx;
+	public double locationy;
 	
 	public ChatController()
 	{
@@ -191,18 +195,44 @@ public class ChatController
 	}
 	
 	
-	public String searchMemers(double location1x,double  location1y, double location2x, double location2y)
+	public String searchMemers(String userInput)
 	{
+//		double lati = 0;
+//		double longi = 0;
+		
+		String [] answer = userInput.split(",");
+		
+		locationx = Double.parseDouble(answer[0]);
+		locationy = Double.parseDouble(answer[1]);
+		
+	
+		
+//		int count1 = twitterBot.memeCount(longi, lati);
+		
+		
+//		String memeDefined = "";
 		String memersResults = "";
-		location1x = 
-		location1y = 
-		location2x =  
-		location2y = 
+//		
+//		Query memeQuery = new Query(memeDefined);
+//		memeQuery.setGeoCode(new GeoLocation(longi,lati), 5, Query.MILES);
+		
+		
 		
 		
 		memersResults = twitterBot.memeInvestigation();
+		
+		
 		return memersResults;
 	}
 	
+	
+	public double getLocationx()
+	{
+		return locationx;
+	}
 
+	public double getLocationy()
+	{
+		return locationy;
+	}
 }

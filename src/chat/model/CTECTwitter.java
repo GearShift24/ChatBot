@@ -10,6 +10,7 @@ import java.util.*;
 import twitter4j.*;
 import java.util.Scanner;
 
+
 public class CTECTwitter
 {
 	private ChatController baseController;
@@ -201,21 +202,30 @@ private void removeEmptyText()
 	
 	
 	
-	
+//	public int memeCount(double longi, double lati)
+//	{
+//		int count = 0;
+//		
+//		return count;
+//	}
 	
 	
 	public String memeInvestigation()	//I want this to compare 2 locations and see who memes more.
 	{
 		String results = "";
 		int memers1 = 0;
-		int memers2 = 0;
+		int politicals = 0;
+		
+		
+		
+		
 		
 		for(int index = 0; index < baseController.getChatbot().getMemesList().size(); index++)
 		{
 			Query query = new Query(baseController.getChatbot().getMemesList().get(index));
 			query.setCount(1000);
-			query.setGeoCode(new GeoLocation(baseController.getlocation1x, location1y), 10, Query.KILOMETERS);
-			query.setSince("2017-3");
+			query.setGeoCode(new GeoLocation(baseController.getLocationx(),baseController.getLocationy()), 5, Query.MILES);
+			query.setSince("2017-03-01");
 			
 			try
 			{
@@ -229,17 +239,18 @@ private void removeEmptyText()
 		}
 		
 		
-		for(int index = 0; index < baseController.getChatbot().getMemesList().size(); index++)
+		
+		for(int index = 0; index < baseController.getChatbot().getPoliticalTopicList().size(); index++)
 		{
-			Query query = new Query(baseController.getChatbot().getMemesList().get(index));
+			Query query = new Query(baseController.getChatbot().getPoliticalTopicList().get(index));
 			query.setCount(1000);
-			query.setGeoCode(new GeoLocation(location2x, location2y), 10, Query.KILOMETERS);
-			query.setSince("2017-3");
+			query.setGeoCode(new GeoLocation(baseController.getLocationx(),baseController.getLocationy()), 5, Query.KILOMETERS);
+			query.setSince("2017-03-01");
 			
 			try
 			{
 				QueryResult result = chatbotTwitter.search(query);
-				memers2 +=  result.getCount();
+				politicals +=  result.getCount();
 			}
 			catch (TwitterException error)
 			{
@@ -253,7 +264,7 @@ private void removeEmptyText()
 //	
 		
 		
-		results = "The first place CTEC had " + memers1 + " memers,  compared to the second place which had " + memers2 + " memers";
+		results = "Your chosen place had " + memers1 + " memers,  and then " + politicals + " political jocks.";
 		
 		return results;
 	}
